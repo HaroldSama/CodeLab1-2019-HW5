@@ -52,11 +52,13 @@ public class PlayerControl : MonoBehaviour
     
     // Update is called once per frame
     void Update()
-    {        
+    {   
+        
+        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * MovingSpeed, rb.velocity.y);     
         //MoveMent
-        if (Input.GetKeyDown(Left))
+        /*if (Input.GetKeyDown(Left))
         {
-            rb.velocity -= SpeedH;
+            
         }
         
         if (Input.GetKeyUp(Left))
@@ -72,7 +74,7 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyUp(Right))
         {
             rb.velocity -= SpeedH;
-        }
+        }*/
         
         if (landed && Input.GetKeyDown(Jump))
         {
