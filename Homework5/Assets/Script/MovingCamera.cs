@@ -16,6 +16,7 @@ public class MovingCamera : MonoBehaviour
     void Update()
     {
         Vector3 cameraPos = Camera.main.transform.position;
+        cameraPos.x = transform.position.x;
         cameraPos.y = transform.position.y;
         Camera.main.transform.position = cameraPos;
     }

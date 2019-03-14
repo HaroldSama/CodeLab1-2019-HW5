@@ -14,6 +14,8 @@ public class PlayerControl : MonoBehaviour
     public float MovingSpeed;
     public float JumpingSpeed;
     public int ComboFrameRange;
+    public int MaxAttackStage;
+    public float HitRecover;
     public LayerMask groundLayer;
 
     private Vector2 SpeedH = new Vector2(0, 0);
@@ -22,9 +24,11 @@ public class PlayerControl : MonoBehaviour
 
     [Header("Game Stat")]
     public Animator animator;
-    public bool LookRight = true;
+    public bool FacingRight = true;
     public int AttackStage;
     public int ComboBar;
+    public bool injured;
+    public bool retreating;
 
     // Start is called before the first frame update
     void Start()
@@ -36,20 +40,35 @@ public class PlayerControl : MonoBehaviour
     
     void Update()
     {   
+        //Injured
+        if (injured && !retreating)
+        {
+            animator.SetBool("Injured", true);
+            rb.velocity *= -1;
+            if (rb.velocity.y > 0)
+            {
+               Vector2 magnify = rb.velocity;
+               magnify.y = JumpingSpeed;
+               rb.velocity = magnify;
+            }            
+            retreating = true;
+            Invoke("Recover", HitRecover);
+        }
+        
         //Movement
-        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * MovingSpeed, rb.velocity.y);     
+        if (!injured) rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * MovingSpeed, rb.velocity.y);     
         
         //Jump
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, transform.localScale.y * 0.6f, groundLayer);
-        if (hit.collider != null && Input.GetKeyDown(Jump)) rb.velocity += SpeedV;
+        if (!injured && hit.collider != null && Input.GetKeyDown(Jump)) rb.velocity += SpeedV;
         
         //Flip
-        if ((rb.velocity.x > 0 && LookRight) || (rb.velocity.x < 0 && !LookRight))
+        if (!injured && ((rb.velocity.x < 0 && FacingRight) || (rb.velocity.x > 0 && !FacingRight)))
         {
-            LookRight = !LookRight;
+            FacingRight = !FacingRight;
             Vector3 CharScale = transform.localScale;
             CharScale.x *= -1;
-            transform.localScale = CharScale;
+            transform.localScale = CharScale;        
         }
         
         //Attack        
@@ -62,26 +81,19 @@ public class PlayerControl : MonoBehaviour
                 animator.SetInteger("AttackStage", AttackStage);
             }
         }
-        
-        if (Input.GetKeyDown(Attack) && AttackStage == 2 && ComboBar < 30)
+
+        if (!injured && Input.GetKeyDown(Attack) && AttackStage < MaxAttackStage && ComboBar < 30)
         {
             AttackStage++;
             animator.SetInteger("AttackStage", AttackStage);
-            ComboBar += ComboFrameRange;
+            ComboBar += ComboFrameRange;        
         }
-        
-        if (Input.GetKeyDown(Attack) && AttackStage == 1)
-        {
-            AttackStage++;
-            animator.SetInteger("AttackStage", AttackStage);
-            ComboBar += ComboFrameRange;
-        }        
-        
-        if (Input.GetKeyDown(Attack) && AttackStage == 0)
-        {
-            AttackStage++;
-            animator.SetInteger("AttackStage", AttackStage);
-            ComboBar += ComboFrameRange;
-        }
+    }
+
+    void Recover()
+    {
+        injured = false;
+        animator.SetBool("Injured", false);
+        retreating = false;
     }
 }

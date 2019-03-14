@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int level;
+    public int maxLevel;
     public static GameManager Instance;
 
     private void Awake()

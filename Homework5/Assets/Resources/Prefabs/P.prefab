@@ -122,13 +122,17 @@ MonoBehaviour:
   MovingSpeed: 10
   JumpingSpeed: 20
   ComboFrameRange: 30
+  MaxAttackStage: 3
+  HitRecover: 0.4
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   animator: {fileID: 1278971518350244098}
-  LookRight: 0
+  FacingRight: 1
   AttackStage: 0
   ComboBar: 0
+  injured: 0
+  retreating: 0
 --- !u!95 &1278971518350244098
 Animator:
   serializedVersion: 3

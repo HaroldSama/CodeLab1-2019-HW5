@@ -18,6 +18,7 @@
           <e p="LevelGenerator.cs" t="Include" />
           <e p="MovingCamera.cs" t="Include" />
           <e p="PlayerControl.cs" t="Include" />
+          <e p="Trap.cs" t="Include" />
         </e>
       </e>
       <e p="Homework5.sln" t="IncludeFlat" />
