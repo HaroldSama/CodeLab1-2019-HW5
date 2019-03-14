@@ -7,10 +7,16 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Files" t="Include">
+          <e p="level0.txt" t="Include" />
           <e p="level1.txt" t="Include" />
+          <e p="level2.txt" t="Include" />
+          <e p="level3.txt" t="Include" />
         </e>
         <e p="Script" t="Include">
+          <e p="GameManager.cs" t="Include" />
+          <e p="LevelFinished.cs" t="Include" />
           <e p="LevelGenerator.cs" t="Include" />
+          <e p="MovingCamera.cs" t="Include" />
           <e p="PlayerControl.cs" t="Include" />
         </e>
       </e>

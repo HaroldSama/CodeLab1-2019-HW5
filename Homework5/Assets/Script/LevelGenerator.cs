@@ -7,13 +7,22 @@ using UnityEngine.SceneManagement;
 public class LevelGenerator : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        string filePath = Application.dataPath + "/Files/level" + SceneManager.sceneCountInBuildSettings + ".txt";
+        string filePath = Application.dataPath + "/Files/level" + GameManager.Instance.level + ".txt";
 
         if (!File.Exists(filePath))
         {
-            File.WriteAllText(filePath, "XXXXXXXXXXXXXXXXXXXXXXXX");
+            File.WriteAllText(filePath, "XXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                                                 "X----------------------X\n" +
+                                                 "X----------------------X\n" +
+                                                 "X-----------G----------X\n" +
+                                                 "X----------------------X\n" +
+                                                 "X----------------------X\n" +
+                                                 "X--P-------------------X\n" +
+                                                 "X----------------------X\n" +
+                                                 "X----------------------X\n" +
+                                                 "XXXXXXXXXXXXXXXXXXXXXXXX\n");
         }
 
         string[] inputLines = File.ReadAllLines(filePath);
@@ -24,8 +33,11 @@ public class LevelGenerator : MonoBehaviour
 
             for (int x = 0; x < line.Length; x++)
             {
-                GameObject tile = Instantiate(Resources.Load("Prefabs/" + line[x]), gameObject.transform) as GameObject;
-                tile.transform.position = new Vector2(x - 12, y - 5);
+                if (line[x] != '-')
+                {
+                    GameObject tile = Instantiate(Resources.Load("Prefabs/" + line[x]), gameObject.transform) as GameObject;
+                    tile.transform.position = new Vector2(x - 11.5f, y - 5);                
+                }
             }
         }
     }
@@ -33,7 +45,7 @@ public class LevelGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     
 }

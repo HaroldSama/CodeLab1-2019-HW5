@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45777d46-70df-4ee3-99f0-740ea6bf68cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Homework5/.idea/.idea.Homework5/.idea/contentModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework5/.idea/.idea.Homework5/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework5/.idea/.idea.Homework5/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework5/.idea/.idea.Homework5/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework5/.idea/.idea.Homework5/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework5/.idea/.idea.Homework5/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework5/.idea/.idea.Homework5/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework5/.idea/.idea.Homework5/riderModule.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CodeLab1-2019-HW5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CodeLab1-2019-HW5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Assets/Script/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Assets/Script/PlayerControl.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +12,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="750">
@@ -34,7 +24,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Homework5/Assets/Script/PlayerControl.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-225">
+            <state relative-caret-position="-585">
               <folding>
                 <element signature="e#0#143#0" expanded="true" />
               </folding>
@@ -42,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ClassDemo/Assets/Scripts/AsciiLevelLoader.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="360">
               <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
             </state>
           </provider>
@@ -67,8 +57,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Homework5/Assets/Script/PlayerControl.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ClassDemo/Assets/Scripts/HighScoreManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ClassDemo/Assets/Scripts/AsciiLevelLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ClassDemo/Assets/Scripts/HighScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ClassDemo/Assets/Scripts/AsciiLevelLoader.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -153,6 +143,7 @@
       <updated>1552324679741</updated>
       <workItem from="1552324683789" duration="619000" />
       <workItem from="1552339441396" duration="1824000" />
+      <workItem from="1552353502432" duration="186000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing Homework5">
       <created>1552339477301</created>
@@ -161,11 +152,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552339477301</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Generating Floor through file.">
+      <created>1552353599952</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1552353599952</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2443000" />
+    <option name="totallyTimeSpent" value="2629000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -177,9 +175,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12579957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -216,7 +214,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update Gitignore" />
     <MESSAGE value="Initializing Homework5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initializing Homework5" />
+    <MESSAGE value="Generating Floor through file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Generating Floor through file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -230,16 +229,16 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ClassDemo/Assets/Scripts/NewBehaviourScript.cs" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/ClassDemo/Assets/Scripts/AsciiLevelLoader.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+        <state relative-caret-position="360">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Homework5/Assets/Script/PlayerControl.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
+        <state relative-caret-position="-585">
           <folding>
             <element signature="e#0#143#0" expanded="true" />
           </folding>
@@ -253,10 +252,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ClassDemo/Assets/Scripts/AsciiLevelLoader.cs">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        <state relative-caret-position="750">
+          <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
         </state>
       </provider>
     </entry>

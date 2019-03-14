@@ -7,10 +7,6 @@ using UnityEngine.XR.WSA.Input;
 public class PlayerControl : MonoBehaviour
 {
     [Header("Control")]
-    public KeyCode Left = KeyCode.A;
-    public KeyCode Right = KeyCode.D;
-    public KeyCode Up = KeyCode.W;
-    public KeyCode Down = KeyCode.S;
     public KeyCode Attack = KeyCode.J;
     public KeyCode Jump = KeyCode.Space;
     
@@ -18,11 +14,11 @@ public class PlayerControl : MonoBehaviour
     public float MovingSpeed;
     public float JumpingSpeed;
     public int ComboFrameRange;
+    public LayerMask groundLayer;
 
     private Vector2 SpeedH = new Vector2(0, 0);
     private Vector2 SpeedV = new Vector2(0, 0);
     private Rigidbody2D rb;
-    private bool landed;
 
     [Header("Game Stat")]
     public Animator animator;
@@ -38,48 +34,14 @@ public class PlayerControl : MonoBehaviour
         SpeedV.Set(0, JumpingSpeed);
     }
     
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        print("Landed");
-        landed = true;
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        print("Flowing");
-        landed = false;
-    }
-    
-    // Update is called once per frame
     void Update()
     {   
-        
+        //Movement
         rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * MovingSpeed, rb.velocity.y);     
-        //MoveMent
-        /*if (Input.GetKeyDown(Left))
-        {
-            
-        }
         
-        if (Input.GetKeyUp(Left))
-        {    
-            rb.velocity += SpeedH;
-        }
-
-        if (Input.GetKeyDown(Right))
-        {
-            rb.velocity += SpeedH;
-        }
-
-        if (Input.GetKeyUp(Right))
-        {
-            rb.velocity -= SpeedH;
-        }*/
-        
-        if (landed && Input.GetKeyDown(Jump))
-        {
-            rb.velocity += SpeedV;
-        }
+        //Jump
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, transform.localScale.y * 0.6f, groundLayer);
+        if (hit.collider != null && Input.GetKeyDown(Jump)) rb.velocity += SpeedV;
         
         //Flip
         if ((rb.velocity.x > 0 && LookRight) || (rb.velocity.x < 0 && !LookRight))
@@ -122,6 +84,4 @@ public class PlayerControl : MonoBehaviour
             ComboBar += ComboFrameRange;
         }
     }
-
-
 }
